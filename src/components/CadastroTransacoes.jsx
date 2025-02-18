@@ -11,6 +11,7 @@ import {
   Select,
   FormControl,
   InputLabel,
+  Paper,
 } from "@mui/material";
 import api from "../services/api";
 
@@ -22,7 +23,6 @@ const CadastroTransacoes = () => {
   const [pessoas, setPessoas] = useState([]);
   const [transacoes, setTransacoes] = useState([]);
 
-  // Carregar pessoas e transações ao iniciar
   useEffect(() => {
     carregarPessoas();
     carregarTransacoes();
@@ -70,57 +70,90 @@ const CadastroTransacoes = () => {
   };
 
   return (
-    <Box>
-      <Typography variant="h4">Cadastro de Transações</Typography>
-      <TextField
-        label="Descrição"
-        value={descricao}
-        onChange={(e) => setDescricao(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <TextField
-        label="Valor"
-        type="number"
-        value={valor}
-        onChange={(e) => setValor(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <FormControl fullWidth margin="normal">
-        <InputLabel>Tipo</InputLabel>
-        <Select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <MenuItem value="receita">Receita</MenuItem>
-          <MenuItem value="despesa">Despesa</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl fullWidth margin="normal">
-        <InputLabel>Pessoa</InputLabel>
-        <Select value={pessoaId} onChange={(e) => setPessoaId(e.target.value)}>
-          {pessoas.map((pessoa) => (
-            <MenuItem key={pessoa.id} value={pessoa.id}>
-              {pessoa.nome}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <Button variant="contained" onClick={handleCadastrar}>
-        Cadastrar
-      </Button>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: 3,
+      }}>
+      <Typography variant="h4" gutterBottom>
+        Cadastro de Transações
+      </Typography>
+      <Paper
+        sx={{
+          padding: 3,
+          width: "100%",
+          maxWidth: 500,
+          border: "1px solid #4F6F52",
+          borderRadius: 2,
+        }}>
+        <TextField
+          label="Descrição"
+          value={descricao}
+          onChange={(e) => setDescricao(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Valor"
+          type="number"
+          value={valor}
+          onChange={(e) => setValor(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Tipo</InputLabel>
+          <Select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+            <MenuItem value="receita">Receita</MenuItem>
+            <MenuItem value="despesa">Despesa</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Pessoa</InputLabel>
+          <Select
+            value={pessoaId}
+            onChange={(e) => setPessoaId(e.target.value)}>
+            {pessoas.map((pessoa) => (
+              <MenuItem key={pessoa.id} value={pessoa.id}>
+                {pessoa.nome}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <Button
+          variant="contained"
+          onClick={handleCadastrar}
+          fullWidth
+          sx={{ marginTop: 2, backgroundColor: "#4F6F52" }}>
+          Cadastrar
+        </Button>
+      </Paper>
 
-      <List>
-        {transacoes.map((transacao) => (
-          <ListItem key={transacao.id}>
-            <ListItemText
-              primary={`${transacao.descricao} (${transacao.tipo}: R$ ${transacao.valor})`}
-              secondary={`Pessoa: ${
-                pessoas.find((p) => p.id === transacao.pessoaId)?.nome ||
-                "Desconhecida"
-              }`}
-            />
-          </ListItem>
-        ))}
-      </List>
+      <Paper
+        sx={{
+          marginTop: 3,
+          padding: 2,
+          width: "100%",
+          maxWidth: 500,
+          border: "1px solid #4F6F52",
+          borderRadius: 2,
+        }}>
+        <List>
+          {transacoes.map((transacao) => (
+            <ListItem key={transacao.id} divider>
+              <ListItemText
+                primary={`${transacao.descricao} (${transacao.tipo}: R$ ${transacao.valor})`}
+                secondary={`Pessoa: ${
+                  pessoas.find((p) => p.id === transacao.pessoaId)?.nome ||
+                  "Desconhecida"
+                }`}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Paper>
     </Box>
   );
 };

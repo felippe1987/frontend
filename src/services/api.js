@@ -7,4 +7,4 @@ const api = axios.create({
 
 export default api;
 
-//Voltar aqui e testar a api
+//Voltar aqui e testar a api e funcionamento do projeto, lembra de apagar o comentario meu eu do futuro!!!!!!
