@@ -5,7 +5,7 @@ Este é o frontend do **Sistema de Controle de Gastos**, desenvolvido em React c
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Node.js (versão 16 ou superior)![Uploading Captura de tela 2025-03-05 155208.png…]()
+- Node.js (versão 16 ou superior)!
 
 - NPM ou Yarn
 
