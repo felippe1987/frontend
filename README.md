@@ -18,3 +18,7 @@ Axios: Cliente HTTP para consumir a API.
 
 React Router DOM: Gerenciamento de rotas no frontend.
 
+## 🖼 Screenshot
+
+![Screenshot da Aplicação](./src/images/Captura de tela 2025-03-05 155208.png)
+
