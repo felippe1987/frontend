@@ -23,15 +23,15 @@ React Router DOM: Gerenciamento de rotas no frontend.
 frontend/
 ├── public/
 ├── src/
-│   ├── components/      # Componentes React
+│   ├── components/      
 │   │   ├── CadastroPessoas.jsx
 │   │   ├── CadastroTransacoes.jsx
 │   │   └── ConsultaTotais.jsx
-│   ├── services/        # Serviços (API)
+│   ├── services/        
 │   │   └── api.js
-│   ├── App.js           # Componente principal
-│   └── index.js         # Ponto de entrada do frontend
-├── package.json         # Dependências do frontend
+│   ├── App.js           
+│   └── index.js         
+├── package.json         
 
 🌟 Funcionalidades
 Cadastro de pessoas com nome e idade.
@@ -40,7 +40,7 @@ Cadastro de transações (receitas/despesas) associadas a uma pessoa.
 
 Consulta de totais de receitas, despesas e saldos por pessoa e geral.
 
-Interface responsiva e amigável.(Não foi exigido uma interface mais detalhada)
+Interface responsiva e amigável.
 
 ## 🖼 Preview
 
