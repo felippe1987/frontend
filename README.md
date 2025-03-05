@@ -5,6 +5,7 @@ Este é o frontend do **Sistema de Controle de Gastos**, desenvolvido em React c
 ## 🚀 Como Executar
 
 ### Pré-requisitos
+
 - Node.js (versão 16 ou superior)!
 
 - NPM ou Yarn
@@ -18,3 +19,6 @@ Axios: Cliente HTTP para consumir a API.
 
 React Router DOM: Gerenciamento de rotas no frontend.
 
+## 🖼 Preview
+
+![Screenshot da Aplicação](./src/assets/screnshots.png)
