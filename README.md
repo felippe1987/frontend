@@ -21,4 +21,4 @@ React Router DOM: Gerenciamento de rotas no frontend.
 
 ## 🖼 Preview
 
-![Screenshot da Aplicação](./src/assets/screenshots.png)
+![Screenshot da Aplicação](./src/assets/screnshots.png)
